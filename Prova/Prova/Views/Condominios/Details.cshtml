@@ -1,0 +1,34 @@
+﻿@model Prova.Models.Condominio
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Condominios</h2>
+
+<div>
+    <h4>Detalhes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeCondominio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeCondominio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdAdm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdAdm)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdCondominio }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

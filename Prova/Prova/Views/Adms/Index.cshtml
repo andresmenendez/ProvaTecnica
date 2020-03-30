@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Prova.Models.Adm>
+
+@{
+    ViewBag.Title = "Administradoras";
+}
+
+<h2>Administradoras</h2>
+
+<p>
+    @Html.ActionLink("Nova Administradora", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeAdm)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeAdm)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.IdAdm }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.IdAdm }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.IdAdm })
+        </td>
+    </tr>
+}
+
+</table>

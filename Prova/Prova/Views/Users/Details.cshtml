@@ -1,0 +1,50 @@
+﻿@model Prova.Models.User
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Área do Usuário</h2>
+
+<div>
+    <h4>Detalhes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdCondominio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdCondominio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoUser )
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdUser }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

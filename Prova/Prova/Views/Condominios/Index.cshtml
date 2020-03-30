@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Prova.Models.Condominio>
+
+@{
+    ViewBag.Title = "Condomínios";
+}
+
+<h2>Condomínios</h2>
+
+<p>
+    @Html.ActionLink("Novo Condomínio", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Condomínio")
+        </th>
+        <th>
+            @Html.DisplayName("Administradora")
+        </th>
+        <th>
+            @Html.DisplayName("Síndico")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeCondominio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GetAdministradora().NomeAdm)
+        </td>
+        <td>
+            @if (item.GetResponsavel() != null)
+            {
+                @Html.DisplayFor(modelItem => item.GetResponsavel().Nome)
+            }
+            else
+            {
+                @Html.DisplayName("Sem responsável cadastrado")
+            }
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id = item.IdCondominio }) |
+            @Html.ActionLink("Detalhes", "Details", new { id = item.IdCondominio }) |
+            @Html.ActionLink("Deletar", "Delete", new { id = item.IdCondominio })
+        </td>
+    </tr>
+}
+
+</table>

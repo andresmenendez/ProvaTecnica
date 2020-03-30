@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "ATHOS – DESAFIO TÉCNICO";
+}
+
+<div class="jumbotron">
+    <h1>ATHOS – DESAFIO TÉCNICO</h1>
+    <p class="lead">Para este desafio foram utilizadas as seguintes tecnologias: ASP.NET MVC com Entity Framework e banco de dados SQL Server</p>
+    <p class="lead">Para enviar um comunicado do Morador ao Responsável, por favor, clique no botão abaixo.</p>
+    <p><a class="btn btn-default" @Html.ActionLink("Enviar Comunicado", "Create", "Assuntos")  </a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Administradoras</h2>
+        <p>Na área das Administradoras é possível visualizar todas as Administradoras cadastradas no Database, assim como cadastrar novas e ver mais detalhes.</p>
+        <p><a class="btn btn-default" @Html.ActionLink("Administradoras", "Index", "Adms")  </a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Condominios</h2>
+        <p>Na área dos condomínios é possível visualizar todos os condomínios cadastrados no Database, assim como cadastrar novos e ver mais detalhes.</p>
+        <p><a class="btn btn-default" @Html.ActionLink("Condomínios", "Index", "Condominios")  </a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Usuários</h2>
+        <p>
+            Na área do usuário é possível visualizar todos os usuários cadastrados no Database, assim como cadastrar novos e ver mais detalhes.
+        </p>
+        <p><a class="btn btn-default" @Html.ActionLink("Usuários", "Index", "Users")  </a></p>
+    </div>
+</div>

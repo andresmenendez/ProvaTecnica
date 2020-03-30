@@ -1,0 +1,39 @@
+﻿@model Prova.Models.Condominio
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Condominios</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeCondominio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeCondominio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdAdm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdAdm)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

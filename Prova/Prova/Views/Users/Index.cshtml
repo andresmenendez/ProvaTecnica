@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Prova.Models.User>
+
+@{
+    ViewBag.Title = "Usuários";
+}
+
+<h2>Área do Usuário</h2>
+
+<p>
+    @Html.ActionLink("Novo Usuário", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdCondominio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoUser)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GetCondominio().NomeCondominio)
+        </td>
+        <td>
+            @Html.DisplayName(item.TipoUsuarioString(item.TipoUser))
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.IdUser }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.IdUser }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.IdUser })
+        </td>
+    </tr>
+}
+
+</table>

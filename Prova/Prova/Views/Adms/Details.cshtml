@@ -1,0 +1,26 @@
+﻿@model Prova.Models.Adm
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Administradoras</h2>
+
+<div>
+    <h4>Detalhes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeAdm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeAdm)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdAdm }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
