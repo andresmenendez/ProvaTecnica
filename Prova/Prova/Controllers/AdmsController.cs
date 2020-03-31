@@ -107,7 +107,6 @@ namespace Prova.Controllers
 
         // POST: Adms/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
             Adm adm = db.Adms.Find(id);
